@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="false"
+    app:layout_optimizationLevel="chains"
+
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/line3_1"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_marginLeft="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
+      >
+
+        <TextView
+            android:id="@+id/trainName"
+            android:layout_width="259dp"
+            android:layout_height="wrap_content"
+            android:text="1/12.JUMPING SQUATS"
+            android:textColor="#E6040505"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            />
+
+        <ImageView
+            android:id="@+id/TrainVideo"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+
+            app:srcCompat="@drawable/ic_baseline_videocam_24"
+            android:layout_toEndOf="@+id/trainName"/>
+
+    </RelativeLayout>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="382dp"
+        android:layout_height="181dp"
+        android:src="@drawable/gif3"
+        android:layout_below="@id/line3_1"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/trainDes"
+        android:layout_width="381dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gif"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="10dp"
+        android:text="Start in the squat position, then jump up using your abdominal muscles for strength. This exercise works your abdomen."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/trainDes"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+
+        android:background="#4D5E578C"
+
+        />
+
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

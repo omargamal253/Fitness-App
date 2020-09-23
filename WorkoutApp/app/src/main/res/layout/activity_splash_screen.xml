@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splashimg"
+    tools:context=".UI.splash_screen">
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorBlacktransParant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+        android:id="@+id/loseweight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOSE WEIGHT"
+        android:textColor="@color/colorwhite"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <View
+        android:id="@+id/line"
+        android:layout_width="140dp"
+        android:layout_height="3dp"
+        android:scaleX="0"
+        android:background="@color/colorOmer"
+        app:layout_constraintLeft_toLeftOf="@+id/loseweight"
+        app:layout_constraintRight_toRightOf="@+id/loseweight"
+        app:layout_constraintTop_toBottomOf="@+id/loseweight"/>
+    <TextView
+        android:id="@+id/in30days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IN 30 DAYS"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintLeft_toLeftOf="@+id/loseweight"
+        app:layout_constraintRight_toRightOf="@+id/loseweight"
+        android:textStyle="bold"
+        android:textSize="26sp"/>
+    <TextView
+        android:id="@+id/Desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ONE SMALL STEP\nONE GIANT LEAP"
+        android:textSize="12dp"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="30dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

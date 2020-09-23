@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.LevelActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose your fitness level"
+            android:textColor="@android:color/black"
+            android:textSize="28dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create workout plan that suits you best"
+            android:layout_below="@+id/text1"
+            android:gravity="center" />
+
+        <RelativeLayout
+            android:id="@+id/txt_button1"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/text2"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/normal_back"
+            android:layout_marginLeft="20dp">
+                <TextView
+                    android:id="@+id/btn1_text1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BEGINNER"
+                    android:textColor="#3C3B3E"
+                    android:textSize="25dp"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp"/>
+                <TextView
+                    android:id="@+id/btn1_text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Just start exercising"
+                    android:textColor="#818080"
+                    android:textSize="20dp"
+                    android:layout_below="@id/btn1_text1"
+                    android:gravity="center"
+                    android:layout_marginTop="2dp"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/txt_button2"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_below="@id/txt_button1"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/normal_back"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:id="@+id/btn2_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INTERMEDIATE"
+                android:textColor="#3C3B3E"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:id="@+id/btn2_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1-2 workouts/week"
+                android:textSize="20dp"
+                android:layout_below="@id/btn2_text1"
+                android:gravity="center"
+                android:layout_marginTop="2dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/txt_button3"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_below="@id/txt_button2"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/normal_back"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:id="@+id/btn3_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADVANCED"
+                android:textColor="#3C3B3E"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:id="@+id/btn3_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3-5 workouts/week"
+                android:textSize="20dp"
+                android:layout_below="@id/btn3_text1"
+                android:gravity="center"
+                android:layout_marginTop="2dp"/>
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/but_next"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/txt_button3"
+            android:layout_marginLeft="20dp"
+            android:text="Next"
+            android:textSize="25dp"
+            android:textColor="@android:color/background_light"
+            android:background="@drawable/text_back"
+            android:layout_marginTop="80dp"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

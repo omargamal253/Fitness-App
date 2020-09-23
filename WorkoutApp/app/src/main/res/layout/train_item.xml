@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="false"
+    app:layout_optimizationLevel="chains"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+
+        >
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gif"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@drawable/gif2" />
+
+        <TextView
+            android:id="@+id/trainName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/gif"
+            android:maxLines="2"
+            android:minLines="2"
+            android:text="STANDING BICYCLE CRUNCHES"
+            android:textColor="#D9000000"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Train_Count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trainName"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/gif"
+            android:text="x26"
+            android:textColor="#B3000000"
+            android:textSize="15dp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/gif"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/gif"
+            android:background="#4D5E578C" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

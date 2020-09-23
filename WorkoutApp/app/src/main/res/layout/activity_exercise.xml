@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.workoutapp.UI.ExerciseActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Toolbar"
+        android:layout_alignParentTop="true"
+        android:background="#CCC"
+        android:minHeight="?actionBarSize"
+        android:elevation="50dp"
+        android:scrollbarStyle="insideInset"
+        app:titleTextColor="#E6000000"
+        android:layout_margin="0dp"
+        android:theme="@style/ToolbarTheme"
+
+
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NumberOfExercise"
+        android:padding="15dp"
+        android:layout_below="@+id/Toolbar"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:textColor="#D9000000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:id="@+id/trainTime"
+        android:layout_marginStart="5dp"
+
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MINS,"
+            android:textColor="#D9000000"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:id="@+id/Time"
+android:layout_toEndOf="@+id/trainTime"
+            android:layout_marginStart="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:textColor="#D9000000"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:id="@+id/trainNum"
+            android:layout_toEndOf="@+id/Time"
+            android:layout_marginStart="5dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXERCISE"
+            android:textColor="#D9000000"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:id="@+id/EXERCISEText"
+            android:layout_toEndOf="@+id/trainNum"
+            android:layout_marginStart="5dp"
+            />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ExerciseRecyclerView"
+        android:layout_below="@+id/NumberOfExercise"
+        android:layout_above="@+id/GoExercise"
+/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="GO"
+        android:id="@+id/GoExercise"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+android:background="@drawable/go_btn_bg"
+        android:textSize="17dp"
+        android:textColor="#fff"
+        android:drawableEnd="@drawable/arrow_right_ic"
+        android:textAlignment="center"
+android:padding="10dp"
+android:onClick="GoExercise"
+        />
+</RelativeLayout>

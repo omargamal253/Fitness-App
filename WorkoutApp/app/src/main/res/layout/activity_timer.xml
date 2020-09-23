@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.workoutapp.UI.TimerActivity"
+    android:background="#000">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Toolbar"
+        android:layout_alignParentTop="true"
+        android:background="@color/transparent"
+        android:minHeight="?actionBarSize"
+        android:elevation="50dp"
+        android:scrollbarStyle="insideInset"
+        app:titleTextColor="#fff"
+        android:layout_margin="0dp"
+        android:theme="@style/ToolbarTheme"
+
+        />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ExerciseRelative"
+        android:layout_below="@+id/Toolbar"
+android:layout_marginTop="20dp"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Each side"
+        android:id="@+id/Train_CountTxt"
+        android:textColor="#fff"
+        android:layout_marginStart="17dp"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x26"
+        android:id="@+id/Train_Count"
+        android:textColor="#fff"
+        android:layout_marginStart="5dp"
+        android:textSize="15dp"
+        android:textAlignment="center"
+android:layout_toEndOf="@+id/Train_CountTxt"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="STANDING BICYCLE CRUNCHES"
+        android:textColor="#fff"
+        android:textSize="19dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:textStyle="bold"
+        android:id="@+id/trainName"
+        android:maxLines="2"
+        android:minLines="2"
+        android:layout_below="@+id/Train_Count"
+        android:textAlignment="center"
+        />
+    </RelativeLayout>
+
+    <com.androchef.happytimer.countdowntimer.CircularCountDownView
+        android:id="@+id/circularCountDownView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:stroke_foreground_color="#2196F3"
+        app:stroke_background_color="#CCC"
+        app:stroke_background_thickness="15dp"
+        app:stroke_foreground_thickness="20dp"
+        app:timer_text_color="#fff"
+        app:timer_text_shown="true"
+        app:timer_text_isBold="true"
+        app:timer_text_format="MINUTE_SECOND"
+        app:timer_text_size="30dp"
+        app:timer_type="COUNT_DOWN"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/ExerciseRelative"
+
+        />
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/train_bg"
+>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take a Rest"
+            android:textColor="#2196F3"
+            android:textSize="33dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:id="@+id/Message"
+            android:visibility="invisible"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            />
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+        android:layout_width="350dp"
+        android:layout_height="330dp"
+        android:src="@drawable/gif3"
+        android:id="@+id/gif"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
+        <ImageView
+            android:id="@+id/TrainVideo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/ic_baseline_videocam_24"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/stopwatch"
+            android:layout_below="@+id/Message"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/StopWatch"
+            android:visibility="invisible"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

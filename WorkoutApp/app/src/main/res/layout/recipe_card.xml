@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/img_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="9dp"
+            android:background="@drawable/ic_breakfast" />
+
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/img_view"
+            android:text="Breakfast"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:background="@drawable/dots_bg"
+            android:layout_below="@+id/img_view"
+       android:layout_marginTop="16dp"
+            android:layout_marginLeft="10dp"
+android:id="@+id/dots"
+            />
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="o 1 cup of tea or black coffee without sugar and milk"
+            android:textSize="14dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/img_view"
+            android:layout_toEndOf="@+id/dots"
+            android:layout_marginLeft="12dp"
+             />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dots_bg"
+            android:layout_below="@+id/txt1"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/dot2"
+            />
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="o Oats with fat-free milk (oatmeal, cracked wheat or barley) "
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            android:textSize="14dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/txt1"
+            android:layout_marginLeft="12dp"
+            android:layout_toEndOf="@+id/dot2"
+
+            />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
