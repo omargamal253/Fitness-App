@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,19 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".UI.DaysActivity">
 
+
+
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        android:background="#fff"
+        android:paddingBottom="20dp"
+        >
+
         <TextView
             android:id="@+id/text1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Set your workout days"
             android:textColor="@android:color/black"
-            android:textSize="28dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center"/>
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"/>
         <LinearLayout
             android:id="@+id/layout1"
             android:layout_width="match_parent"
@@ -29,34 +37,37 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="0dp"
                 android:src="@drawable/ic_training"/>
             <TextView
                 android:id="@+id/num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
-                android:layout_marginTop="19dp"
+                android:textSize="20dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="3dp"
                 android:text="0"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
-                android:layout_marginTop="19dp"
+                android:textSize="20dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginLeft="7dp"
                 android:textColor="@android:color/black"
                 android:text="Time/Week"/>
         </LinearLayout>
 
-        <LinearLayout
+
+
+        <RelativeLayout
             android:id="@+id/line2"
-            android:layout_width="350dp"
-            android:layout_height="80dp"
-            android:layout_below="@id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/layout1"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/training_line">
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+           >
             <TextView
                 android:id="@+id/sunday"
                 android:layout_width="wrap_content"
@@ -68,17 +79,26 @@
                 android:button="@drawable/check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="250dp"
-                android:checked="false"/>
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/training_line"
+android:layout_below="@+id/sunday"
 
-        <LinearLayout
+                />
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/line3"
-            android:layout_width="350dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_below="@id/line2"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/training_line">
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
             <TextView
                 android:id="@+id/monday"
                 android:layout_width="wrap_content"
@@ -87,20 +107,30 @@
                 android:textSize="20dp"/>
             <CheckBox
                 android:id="@+id/mon"
+                android:button="@drawable/check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/check_box"
-                android:layout_marginLeft="244dp"
-                android:checked="false" />
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/training_line"
+                android:layout_below="@+id/monday"
 
-        <LinearLayout
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/line4"
-            android:layout_width="350dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_below="@id/line3"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/training_line">
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
             <TextView
                 android:id="@+id/tuesday"
                 android:layout_width="wrap_content"
@@ -109,20 +139,29 @@
                 android:textSize="20dp"/>
             <CheckBox
                 android:id="@+id/tues"
+                android:button="@drawable/check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="240dp"
-                android:button="@drawable/check_box"
-                android:checked="false"/>
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/training_line"
+                android:layout_below="@+id/tuesday"
 
-        <LinearLayout
+                />
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/line5"
-            android:layout_width="350dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_below="@id/line4"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/training_line">
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
             <TextView
                 android:id="@+id/wednesday"
                 android:layout_width="wrap_content"
@@ -131,20 +170,29 @@
                 android:textSize="20dp"/>
             <CheckBox
                 android:id="@+id/wednes"
+                android:button="@drawable/check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="212dp"
-                android:button="@drawable/check_box"
-                android:checked="false"/>
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/training_line"
+                android:layout_below="@+id/wednesday"
 
-        <LinearLayout
+                />
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/line6"
-            android:layout_width="350dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_below="@id/line5"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/training_line">
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
             <TextView
                 android:id="@+id/thursday"
                 android:layout_width="wrap_content"
@@ -153,20 +201,31 @@
                 android:textSize="20dp"/>
             <CheckBox
                 android:id="@+id/thurs"
+                android:button="@drawable/check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="232dp"
-                android:button="@drawable/check_box"
-                android:checked="false"/>
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/training_line"
+                android:layout_below="@+id/thursday"
 
-        <LinearLayout
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:id="@+id/line7"
-            android:layout_width="350dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_below="@id/line6"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/training_line">
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
             <TextView
                 android:id="@+id/friday"
                 android:layout_width="wrap_content"
@@ -175,20 +234,31 @@
                 android:textSize="20dp"/>
             <CheckBox
                 android:id="@+id/fri"
+                android:button="@drawable/check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="260dp"
-                android:button="@drawable/check_box"
-                android:checked="false"/>
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/training_line"
+                android:layout_below="@+id/friday"
 
-        <LinearLayout
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:id="@+id/line8"
-            android:layout_width="350dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_below="@id/line7"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/training_line">
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            >
             <TextView
                 android:id="@+id/saturday"
                 android:layout_width="wrap_content"
@@ -197,23 +267,38 @@
                 android:textSize="20dp"/>
             <CheckBox
                 android:id="@+id/satur"
+                android:button="@drawable/check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="235dp"
-                android:button="@drawable/check_box"
-                android:checked="false"/>
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/training_line"
+                android:layout_below="@+id/saturday"
+
+                />
+        </RelativeLayout>
+
+
+
+
 
         <Button
             android:id="@+id/next"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_below="@id/line8"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:text="Next"
             android:textSize="25dp"
             android:textColor="@android:color/background_light"
-            android:background="@drawable/text_back" />
+            android:background="@drawable/text_back"
+            android:layout_below="@+id/line8"
+            android:layout_marginTop="5dp"
+           />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,10 @@
 package com.example.workoutapp.UI;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -12,26 +14,33 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.workoutapp.R;
 import com.example.workoutapp.adapter.ExercisesAdapter;
 import com.example.workoutapp.model.Exercise;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExDesActivity extends AppCompatActivity {
     RecyclerView ExerciseRecyclerView;
     com.example.workoutapp.adapter.ExercisesAdapter ExercisesAdapter;
-    List<Exercise> Exercises ;
+    List<Exercise> Exercises;
     Toolbar toolbar;
     String ExerciseName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ex_des);
 
 
-        Exercises =(List<Exercise>)  getIntent().getSerializableExtra("ExerciseList");
-
-        ExerciseName =getIntent().getStringExtra("ExerciseName");
+        // Exercises =(List<Exercise>)  getIntent().getSerializableExtra("ExerciseList");
+        Exercises = new ArrayList<>();
+        ExerciseName = getIntent().getStringExtra("ExerciseName");
         toolbar = findViewById(R.id.Toolbar);
-        toolbar.setTitle(ExerciseName);
+        toolbar.setTitle(ExerciseName + " Workout");
 
         setSupportActionBar(toolbar);
 
@@ -45,37 +54,45 @@ public class ExDesActivity extends AppCompatActivity {
         });
 
         ExerciseRecyclerView = findViewById(R.id.ExerciseRecyclerView);
-        ExercisesAdapter =new ExercisesAdapter(this,  Exercises,2 );
+        ExercisesAdapter = new ExercisesAdapter(this, Exercises, 2);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(
-                this , LinearLayoutManager.VERTICAL,false
+                this, LinearLayoutManager.VERTICAL, false
         );
         ExerciseRecyclerView.setLayoutManager(layoutManager);
-       ExerciseRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        ExerciseRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
         ExerciseRecyclerView.setAdapter(ExercisesAdapter);
+        getMyList();
 
-
-     /*  for (int i =0 ;i<Exercises.size();i++)
-            ExercisesAdapter.AddNewExercise(Exercises.get(i));*/
-
-      /*  AddNewExercise("STANDING BICYCLE CRUNCHES EXERCISE","Start in the squat position, then jump up using your abdominal muscles for strength. This exercise works your abdomen.",R.drawable.gif1);
-        AddNewExercise("SUMO SIDE BENDS ILLUSTRATED EXERCISE GUIDE","Lie on your back with your knees up at a 90 degree angle and your hands behind your head. Lift your upper body and thighs, and then stretch out. Repeat this exercise.",R.drawable.gif2);
-        AddNewExercise("EXERCISE FOR SEXY LEAN & SCULPTED BICEPS","The up and down plank strengthens and tones your core, glutes, arms, wrists, and shoulders. This exercise helps to improve your posture, tightens the midsection and boosts weight loss.",R.drawable.gif3);
-
-        AddNewExercise("SKI ABS | ILLUSTRATED EXERCISE GUiDE","The up and down plank strengthens and tones your core, glutes, arms, wrists, and shoulders. This exercise helps to improve your posture, tightens the midsection and boosts weight loss.",R.drawable.gif4);
-        AddNewExercise("Cinch The Waist & Sculpt Your Obliques","Sit on the floor with your knees bent, feet lifted a little bit and back tilted backwards.Then hold your hands together and twist from side to side.",R.drawable.gif5);
-*/
     }
 
-    public void AddNewExercise(String name , String Des , int resId ){
-        Exercise exercise = new Exercise();
-        exercise.setExName(name);
-        exercise.setExDes(Des);
-        exercise.setResId(resId);
-        ExercisesAdapter.AddNewExercise(exercise);
-    }
+    public void getMyList() {
 
+        //  Exercise exercise = new Exercise();
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child(ExerciseName);
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    Exercise exercise = data.getValue(Exercise.class);
+                    if (exercise != null) {
+                        Log.d("CurrentUser", exercise.getExName());
+
+                        ExercisesAdapter.AddNewExercise(exercise);
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.d("CurrentUser", databaseError.getMessage());
+            }
+        });
+
+    }
 }

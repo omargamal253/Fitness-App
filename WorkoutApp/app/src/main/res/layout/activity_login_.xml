@@ -27,6 +27,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/colorwhite"/>
+
     <EditText
         android:id="@+id/username"
         android:layout_width="300dp"

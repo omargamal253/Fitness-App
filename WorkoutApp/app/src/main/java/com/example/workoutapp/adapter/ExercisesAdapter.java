@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.bumptech.glide.Glide;
 import com.example.workoutapp.R;
 import com.example.workoutapp.model.Exercise;
 
@@ -67,14 +68,18 @@ public class ExercisesAdapter extends RecyclerView.Adapter<exHolder> implements 
             return ex;
         }
         else return  null;
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull exHolder holder, final int position) {
 
-        holder.gifImageView.setImageResource(  Exercises.get(position).getResId());
-       holder.ExName.setText( Exercises.get(position).getExName());
+       // holder.gifImageView.setImageResource(  Exercises.get(position).getResId());
+     //   Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/skyapp-f0431.appspot.com/o/butt%2Fbutt1.gif?alt=media&token=5d84ea11-a5e0-4270-8aa0-beedeced83af").into(holder.gifImageView);
+      /*  Glide.with(c).load("https://firebasestorage.googleapis.com/v0/b/skyapp-f0431.appspot.com/o/butt%2Fbutt1.gif?alt=media&token=5d84ea11-a5e0-4270-8aa0-beedeced83af"
+        ).asGif().into(view);*/
+        Glide.with(c).load(Exercises.get(position).getGifUrl()
+        ).into(holder.gifImageView);
+        holder.ExName.setText( Exercises.get(position).getExName());
 
        if(mode==1)
         holder.ExCount.setText( Exercises.get(position).getExCount());
@@ -84,7 +89,7 @@ public class ExercisesAdapter extends RecyclerView.Adapter<exHolder> implements 
            holder.TrainVideo.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
-                   Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Exercises.get(position).exUrl));
+                   Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Exercises.get(position).videoUrl));
 
                  /*  Intent intent = new Intent(c, ExVideoActivity.class);
                    intent.putExtra("VideoUrl",Exercises.get(position).exUrl);*/

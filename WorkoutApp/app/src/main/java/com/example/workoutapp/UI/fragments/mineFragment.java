@@ -1,6 +1,5 @@
 package com.example.workoutapp.UI.fragments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,12 +14,12 @@ import android.widget.LinearLayout;
 import com.example.workoutapp.R;
 import com.example.workoutapp.UI.DaysActivity;
 import com.example.workoutapp.UI.LevelActivity;
+import com.example.workoutapp.UI.Login_Activity;
+import com.example.workoutapp.UI.MainActivity;
 import com.example.workoutapp.UI.TroubleZoneActivity;
 
 public class mineFragment extends Fragment {
-
-
-    public mineFragment() {
+    public mineFragment( ) {
         // Required empty public constructor
     }
 
@@ -73,6 +72,9 @@ public class mineFragment extends Fragment {
                         .edit()
                         .clear()
                         .commit();
+                startActivity(new Intent(getContext(),Login_Activity.class));
+                MainActivity.fa.finish();
+
             }
         });
 

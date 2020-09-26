@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     FrameLayout containe;
     RadioGroup radiogroup_home;
     RadioButton radiobutton_Wokout,radiobutton_Calender,radiobutton_recipes,radiobutton_mine;
+    Activity activity;
+    public static Activity fa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         radiobutton_recipes = (RadioButton)findViewById(R.id.radiobutton_recipes);
         radiobutton_mine = (RadioButton)findViewById(R.id.radiobutton_mine);
         radiobutton_Wokout.setChecked(true);
+        fa = this;
         showFragment(new WorkoutFragment());
 
         radiogroup_home.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

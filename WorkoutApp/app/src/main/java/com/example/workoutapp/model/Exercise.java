@@ -4,23 +4,35 @@ import java.io.Serializable;
 
 public class Exercise implements Serializable {
    public String exName,exCount;
-   public String exDes,exUrl;
-    public int resId;
+   public String exDes, videoUrl;
+   public String gifUrl;
+   // public int resId;
 
-    public String getExUrl() {
-        return exUrl;
+    public Exercise() {
     }
 
-    public void setExUrl(String exUrl) {
-        this.exUrl = exUrl;
+    public Exercise(String exName, String exCount, String exDes, String videoUrl, String gifUrl) {
+        this.exName = exName;
+        this.exCount = exCount;
+        this.exDes = exDes;
+        this.videoUrl = videoUrl;
+        this.gifUrl = gifUrl;
     }
 
-    public int getResId() {
-        return resId;
+    public String getVideoUrl() {
+        return videoUrl;
     }
 
-    public void setResId(int resId) {
-        this.resId = resId;
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
+
+    public String getGifUrl() {
+        return gifUrl;
+    }
+
+    public void setGifUrl(String gifUrl) {
+        this.gifUrl = gifUrl;
     }
 
     public String getExName() {

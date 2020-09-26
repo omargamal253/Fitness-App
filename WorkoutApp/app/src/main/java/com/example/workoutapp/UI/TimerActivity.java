@@ -14,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.androchef.happytimer.countdowntimer.CircularCountDownView;
 import com.androchef.happytimer.countdowntimer.HappyTimer;
+import com.bumptech.glide.Glide;
 import com.example.workoutapp.R;
 import com.example.workoutapp.model.Exercise;
 
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class TimerActivity extends AppCompatActivity {
       CircularCountDownView Timer;
-      int RestTime = 10, TrainTime = 20;
+      int RestTime = 5, TrainTime = 5;
     Toolbar toolbar;
     String TitleName;
 
@@ -40,8 +41,6 @@ public class TimerActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.d("CurrentUser","onStop");
-
-
     }
 
     @Override
@@ -101,7 +100,10 @@ try{
         ExName = findViewById(R.id.trainName);
         ExCount = findViewById(R.id.Train_Count);
         Message = findViewById(R.id.Message);
-        gifImageView.setImageResource(Exercises.get(0).getResId());
+     //   gifImageView.setImageResource(Exercises.get(0).getResId());
+        Glide.with(this).load(Exercises.get(0).getGifUrl()
+        ).into(gifImageView);
+
         ExName.setText(Exercises.get(0).getExName());
         ExCount.setText(Exercises.get(0).getExCount());
         StopWatch = findViewById(R.id.StopWatch);
@@ -112,7 +114,7 @@ try{
             @Override
             public void onClick(View v) {
              //   media = true;
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Exercises.get(CurrentEx).exUrl));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Exercises.get(CurrentEx).videoUrl));
                 startActivity(intent);
             }
         });
@@ -170,7 +172,9 @@ try{
                         Timer.initTimer(TrainTime);
                         Timer.startTimer();
                         CurrentEx++;
-                        gifImageView.setImageResource(Exercises.get(CurrentEx).getResId());
+                 //       gifImageView.setImageResource(Exercises.get(CurrentEx).getResId());
+                        Glide.with(getApplicationContext()).load(Exercises.get(CurrentEx).getGifUrl()
+                        ).into(gifImageView);
                         StopWatch.setVisibility(View.INVISIBLE);
 
                         ExName.setText(Exercises.get(CurrentEx).getExName());
@@ -195,6 +199,7 @@ try{
 
             }
         });
+
 
 
 

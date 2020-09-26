@@ -65,9 +65,39 @@ public class AdapterWorkout extends RecyclerView.Adapter<AdapterWorkout.MyViewHo
              if(data.get(position).Type.equals("Classic")){
                  Intent intent = new Intent(context, ExDesActivity.class);
                  intent.putExtra("ExerciseName","Classic");
-                 intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getClassicExercises());
+              //   intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getClassicExercises());
                  context.startActivity(intent);
              }
+                if(data.get(position).Type.equals("Abs Workout")){
+                    Intent intent = new Intent(context, ExDesActivity.class);
+                    intent.putExtra("ExerciseName","Abs");
+                    //   intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getClassicExercises());
+                    context.startActivity(intent);
+                }
+                if(data.get(position).Type.equals("Butt Workout")){
+                    Intent intent = new Intent(context, ExDesActivity.class);
+                    intent.putExtra("ExerciseName","Butt");
+                //    intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getButtExercises());
+                    context.startActivity(intent);
+                }
+              else  if(data.get(position).Type.equals("Leg Workout")){
+                    Intent intent = new Intent(context, ExDesActivity.class);
+                    intent.putExtra("ExerciseName","Leg");
+                //    intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getLegExercises());
+                    context.startActivity(intent);
+                }
+                else  if(data.get(position).Type.equals("Arm Workout")){
+                    Intent intent = new Intent(context, ExDesActivity.class);
+                    intent.putExtra("ExerciseName","Arm");
+                //    intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getArmExercises());
+                    context.startActivity(intent);
+                }
+                else  if(data.get(position).Type.equals("Sleepy Time Stretch")){
+                    Intent intent = new Intent(context, ExDesActivity.class);
+                    intent.putExtra("ExerciseName","Sleepy");
+                    //    intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getArmExercises());
+                    context.startActivity(intent);
+                }
             }
         });
         holder.Start.setOnClickListener(new View.OnClickListener() {
@@ -76,9 +106,41 @@ public class AdapterWorkout extends RecyclerView.Adapter<AdapterWorkout.MyViewHo
                 if(data.get(position).Type.equals("Classic")){
                     Intent intent = new Intent(context, ExerciseActivity.class);
                     intent.putExtra("ExerciseName","Classic");
-                    intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getClassicExercises());
+                   // intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getClassicExercises());
                     context.startActivity(intent);
                 }
+                if(data.get(position).Type.equals("Abs Workout")){
+                    Intent intent = new Intent(context, ExerciseActivity.class);
+                    intent.putExtra("ExerciseName","Abs");
+                    // intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getClassicExercises());
+                    context.startActivity(intent);
+                }
+
+                else  if(data.get(position).Type.equals("Butt Workout")){
+                    Intent intent = new Intent(context, ExerciseActivity.class);
+                    intent.putExtra("ExerciseName","Butt");
+                  //  intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getButtExercises());
+                    context.startActivity(intent);
+                }
+                else  if(data.get(position).Type.equals("Leg Workout")){
+                    Intent intent = new Intent(context, ExerciseActivity.class);
+                    intent.putExtra("ExerciseName","Leg");
+               //     intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getLegExercises());
+                    context.startActivity(intent);
+                }
+                else  if(data.get(position).Type.equals("Arm Workout")){
+                    Intent intent = new Intent(context, ExerciseActivity.class);
+                    intent.putExtra("ExerciseName","Arm");
+               //     intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getArmExercises());
+                    context.startActivity(intent);
+                }
+                else  if(data.get(position).Type.equals("Sleepy Time Stretch")){
+                    Intent intent = new Intent(context, ExerciseActivity.class);
+                    intent.putExtra("ExerciseName","Sleepy");
+                    //     intent.putExtra("ExerciseList", (Serializable) ExData.getInstance().getArmExercises());
+                    context.startActivity(intent);
+                }
+
             }
         });
 
